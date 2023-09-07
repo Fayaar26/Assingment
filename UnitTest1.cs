@@ -11,8 +11,9 @@ namespace Assingment
         [SetUp]
         public void Setup()
         {
-            browser = new ChromeDriver();
-            browser.Manage().Window.Maximize();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("--start-maximized");
+            browser = new ChromeDriver(options);
             browser.Navigate().GoToUrl(Link.url);
         }
 
